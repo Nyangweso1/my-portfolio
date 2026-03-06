@@ -365,6 +365,21 @@
 
     initCursorGlow();
     updateActiveNavLink();
+
+    /* Dynamic copyright year */
+    const yearEl = document.getElementById('footer-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    /* Back to top button */
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 400);
+      }, { passive: true });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   }
 
   if (document.readyState === 'loading') {

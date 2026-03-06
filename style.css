@@ -1331,23 +1331,13 @@ a:focus-visible    { outline-offset: 4px; }
 }
 
 /* ═══════════════════════════════════════════════════════
-   FOOTER
+   FOOTER (base — grid layout defined in UTILITIES section)
 ═══════════════════════════════════════════════════════ */
 .footer {
-  background: var(--navy);
+  background: var(--navy-2);
   border-top: 1px solid var(--navy-3);
-  padding: 40px 0;
-  text-align: center;
 }
 
-.footer p {
-  color: var(--text-3);
-  font-size: 0.88rem;
-  line-height: 2;
-}
-
-.footer-name { color: var(--teal); font-weight: 600; }
-.footer-sub { font-family: var(--font-mono); font-size: 0.8rem; }
 .footer .logo-bracket { color: var(--teal); }
 
 /* ═══════════════════════════════════════════════════════
@@ -1451,4 +1441,131 @@ a:focus-visible    { outline-offset: 4px; }
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+
+/* ── GHOST BUTTON (Download CV) ───────────────────────── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--navy-3);
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+.btn-ghost:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  transform: translateY(-2px);
+}
+
+/* ── FOOTER GRID ──────────────────────────────────────── */
+.footer {
+  background: var(--navy-2);
+  border-top: 1px solid var(--navy-3);
+  padding: 60px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+
+.footer-brand .nav-logo {
+  font-size: 1.4rem;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.footer-tagline {
+  color: var(--text-3);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.footer-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-3);
+  font-size: 0.82rem;
+}
+.footer-location svg { flex-shrink: 0; color: var(--teal); }
+
+.footer-heading {
+  color: var(--text-1);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-links ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  color: var(--text-3);
+  font-size: 0.88rem;
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: var(--teal); }
+
+.footer-bottom {
+  border-top: 1px solid var(--navy-3);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-bottom p { color: var(--text-3); font-size: 0.82rem; margin: 0; }
+.footer-built { font-family: var(--font-mono); }
+
+/* ── BACK TO TOP ──────────────────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: all var(--transition);
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(168,85,247,0.4);
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top:hover { transform: translateY(-3px); }
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: span 2; }
+}
+@media (max-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-brand { grid-column: span 1; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .back-to-top { bottom: 20px; right: 20px; }
+  .hero-actions { flex-wrap: wrap; }
 }
