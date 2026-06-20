@@ -812,6 +812,151 @@ a:focus-visible    { outline-offset: 4px; }
 .skills-grid.visible .skill-fill { transform: scaleX(1); }
 
 /* ═══════════════════════════════════════════════════════
+   EXPERIENCE SECTION
+═══════════════════════════════════════════════════════ */
+.experience-section {
+  background: var(--navy);
+}
+
+.experience-timeline {
+  position: relative;
+  padding: 0;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--teal), var(--blue), transparent);
+}
+
+@media (max-width: 768px) {
+  .experience-timeline::before {
+    left: 24px;
+  }
+}
+
+.experience-item {
+  position: relative;
+  margin-bottom: 48px;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .experience-item {
+    padding-left: 80px;
+    justify-content: flex-start;
+  }
+}
+
+.exp-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: var(--teal);
+  border: 3px solid var(--navy);
+  border-radius: 50%;
+  top: 0;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .exp-marker {
+    left: 16px;
+  }
+}
+
+.exp-card {
+  background: var(--navy-2);
+  border: 1px solid var(--navy-3);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  width: 45%;
+  transition: all var(--transition);
+}
+
+@media (max-width: 768px) {
+  .exp-card {
+    width: 100%;
+  }
+}
+
+.exp-card:hover {
+  border-color: var(--teal-border);
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.1);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.exp-header h3 {
+  font-size: 1.2rem;
+  color: var(--text-1);
+}
+
+.exp-company {
+  font-size: 0.9rem;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.exp-period {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+}
+
+.exp-highlights {
+  margin-bottom: 16px;
+}
+
+.exp-highlights li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+.exp-highlights li::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+}
+
+.exp-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exp-skill-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid var(--teal-border);
+  border-radius: 20px;
+  color: var(--teal);
+}
+
+/* ═══════════════════════════════════════════════════════
    PROJECTS SECTION
 ═══════════════════════════════════════════════════════ */
 .projects-section {
@@ -1085,6 +1230,8 @@ a:focus-visible    { outline-offset: 4px; }
 .cert-logo.udacity  { background: rgba(196,181,253,0.1); color: var(--blue); border: 1px solid rgba(196,181,253,0.3); }
 .cert-logo.microsoft{ background: rgba(0,164,239,0.12); color: #00a4ef; border: 1px solid rgba(0,164,239,0.3); }
 .cert-logo.genai    { background: rgba(196,181,253,0.12); color: #a78bfa; border: 1px solid rgba(196,181,253,0.3); }
+.cert-logo.fabric   { background: rgba(0,105,175,0.12); color: #0069af; border: 1px solid rgba(0,105,175,0.3); }
+.cert-logo.ibm      { background: rgba(0,33,99,0.12); color: #002163; border: 1px solid rgba(0,33,99,0.3); }
 
 .cert-body h4 {
   font-size: 1rem;
