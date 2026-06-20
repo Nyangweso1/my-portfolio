@@ -1232,6 +1232,7 @@ a:focus-visible    { outline-offset: 4px; }
 .cert-logo.genai    { background: rgba(196,181,253,0.12); color: #a78bfa; border: 1px solid rgba(196,181,253,0.3); }
 .cert-logo.fabric   { background: rgba(0,105,175,0.12); color: #0069af; border: 1px solid rgba(0,105,175,0.3); }
 .cert-logo.ibm      { background: rgba(0,33,99,0.12); color: #002163; border: 1px solid rgba(0,33,99,0.3); }
+.cert-logo.awsml    { background: rgba(255,153,0,0.15); color: #ff9900; border: 1px solid rgba(255,153,0,0.3); }
 
 .cert-body h4 {
   font-size: 1rem;
