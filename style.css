@@ -977,6 +977,8 @@ a:focus-visible    { outline-offset: 4px; }
 
 .project-case-study:hover { border-color: var(--teal-border); }
 
+.project-case-study-secondary { margin-top: 28px; }
+
 .project-case-study::before {
   content: '';
   position: absolute;
@@ -1157,6 +1159,12 @@ a:focus-visible    { outline-offset: 4px; }
   color: var(--text-3);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.project-link-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 .metric-divider {
