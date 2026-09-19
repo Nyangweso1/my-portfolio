@@ -245,7 +245,7 @@ a:focus-visible    { outline-offset: 4px; }
   align-items: center;
 }
 
-.nav-links a:not(.nav-cta)::after {
+.nav-links a::after {
   content: '';
   position: absolute;
   bottom: -4px; left: 0;
@@ -254,30 +254,26 @@ a:focus-visible    { outline-offset: 4px; }
   transition: width var(--transition);
 }
 
-.nav-links a:not(.nav-cta):hover,
+.nav-links a:hover,
 .nav-links a.active { color: var(--teal); }
-.nav-links a:not(.nav-cta):hover::after { width: 100%; }
-.nav-links a:not(.nav-cta).active::after { width: 100%; }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active::after { width: 100%; }
 
 .nav-cta {
-  background: transparent;
   color: var(--text-3) !important;
-  border: 1px solid var(--navy-3);
-  padding: 8px 18px;
-  border-radius: var(--radius);
-  transition: all var(--transition) !important;
+  background: transparent;
+  border: 0;
+  padding: 4px 2px;
+  border-radius: 0;
+  transition: color var(--transition) !important;
 }
 
 .nav-cta:hover {
-  background: var(--teal-dim);
   color: var(--teal) !important;
-  border-color: var(--teal);
-  transform: translateY(-2px);
 }
 
 .nav-cta.active {
   color: var(--teal) !important;
-  border-color: var(--teal);
 }
 
 .hamburger {
