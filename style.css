@@ -1167,6 +1167,61 @@ a:focus-visible    { outline-offset: 4px; }
   margin-top: 32px;
 }
 
+.project-resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.project-resource-link:hover {
+  color: var(--blue);
+  transform: translateX(3px);
+}
+
+.project-resource-link svg {
+  width: 14px;
+  height: 14px;
+}
+
+.project-status {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+}
+
+.project-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 16px 20px;
+  background: var(--navy-2);
+  border: 1px solid var(--navy-3);
+  border-radius: var(--radius);
+}
+
+.progress-label {
+  color: var(--text-3);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.progress-value {
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
 .metric-divider {
   width: 1px;
   height: 40px;
