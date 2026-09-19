@@ -1367,6 +1367,89 @@ a:focus-visible    { outline-offset: 4px; }
 }
 
 /* ═══════════════════════════════════════════════════════
+   LAB CHALLENGES SECTION
+═══════════════════════════════════════════════════════ */
+.lab-challenges-section {
+  background: var(--navy);
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.lab-card {
+  background: var(--navy-2);
+  border: 1px solid var(--navy-3);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  transition: all var(--transition);
+}
+
+.lab-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--teal-border);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.lab-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.lab-card-topline .case-study-badge { margin-bottom: 0; }
+
+.lab-platform {
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.lab-card h3 {
+  font-size: 1.35rem;
+  margin: 24px 0;
+}
+
+.lab-detail {
+  margin-bottom: 24px;
+}
+
+.lab-detail h4 {
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.lab-detail p,
+.lesson-list li {
+  color: var(--text-3);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 18px;
+}
+
+.lesson-list li::marker {
+  color: var(--teal);
+}
+
+.lab-card .cert-link {
+  margin-top: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
    CONTACT SECTION
 ═══════════════════════════════════════════════════════ */
 .contact-section {
@@ -1629,6 +1712,8 @@ a:focus-visible    { outline-offset: 4px; }
 
   .case-study-grid { grid-template-columns: 1fr; }
   .case-card.full-width { grid-column: 1; }
+
+  .lab-grid { grid-template-columns: 1fr; }
 
   .project-case-study { padding: 24px 18px; }
 
