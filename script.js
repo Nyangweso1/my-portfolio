@@ -54,32 +54,32 @@
     }
   };
 
-  function getField(id) {
+  const getField = (id) => {
     return document.getElementById(id);
-  }
+  };
 
-  function showError(id, msg) {
+  const showError = (id, msg) => {
     const field = getField(id);
     const err   = document.getElementById('error-' + id);
     if (!field || !err) return;
     field.closest('.form-group').classList.add('has-error');
     field.closest('.form-group').classList.remove('is-valid');
     err.textContent = msg;
-  }
+  };
 
-  function clearError(id) {
+  const clearError = (id) => {
     const field = getField(id);
     const err   = document.getElementById('error-' + id);
     if (!field || !err) return;
     field.closest('.form-group').classList.remove('has-error');
     field.closest('.form-group').classList.add('is-valid');
     err.textContent = '';
-  }
+  };
 
-  function validateField(id) {
+  const validateField = (id) => {
     const field = getField(id);
     if (!field) return true;
-    const value = field.value;
+    const { value } = field;
     if (rules[id].test(value)) {
       clearError(id);
       return true;
@@ -87,12 +87,12 @@
       showError(id, rules[id].msg);
       return false;
     }
-  }
+  };
 
-  function validateAll() {
+  const validateAll = () => {
     const results = ['name', 'email', 'subject', 'message'].map(validateField);
     return results.every(Boolean);
-  }
+  };
 
   /* Live validation — clears error as soon as user fixes field */
   ['name', 'email', 'subject', 'message'].forEach(id => {
@@ -108,7 +108,7 @@
   /* ═══════════════════════════════════════════════════
      LOADING STATE HELPERS
   ═══════════════════════════════════════════════════ */
-  function setLoading(on) {
+  const setLoading = (on) => {
     if (!submitBtn) return;
     const label    = submitBtn.querySelector('.btn-label');
     const sendIcon = submitBtn.querySelector('.btn-send-icon');
@@ -124,16 +124,16 @@
       if (sendIcon) sendIcon.style.display = 'block';
       if (spinner)  spinner.style.display  = 'none';
     }
-  }
+  };
 
-  function showStatus(msg, isError) {
+  const showStatus = (msg, isError) => {
     if (!formStatus) return;
     formStatus.textContent = msg;
     formStatus.className   = 'form-note' + (isError ? ' error' : '');
     if (!isError) {
       setTimeout(() => { formStatus.textContent = ''; formStatus.className = 'form-note'; }, 6000);
     }
-  }
+  };
 
   /* ═══════════════════════════════════════════════════
      CONTACT FORM SUBMIT
@@ -203,7 +203,7 @@
   ═══════════════════════════════════════════════════ */
   const sections = document.querySelectorAll('section[id]');
 
-  function updateActiveNavLink() {
+  const updateActiveNavLink = () => {
     const scrollY = window.scrollY + 140;
     sections.forEach(section => {
       const top  = section.offsetTop;
@@ -219,7 +219,7 @@
         link.removeAttribute('aria-current');
       }
     });
-  }
+  };
 
   /* ═══════════════════════════════════════════════════
      MOBILE HAMBURGER
@@ -322,7 +322,7 @@
   }, { threshold: 0.5 });
 
   /* ── CURSOR GLOW (desktop only) ─────────────────── */
-  function initCursorGlow() {
+  const initCursorGlow = () => {
     if (window.matchMedia('(hover: none)').matches) return;
     const glow = document.createElement('div');
     glow.style.cssText = [
@@ -337,12 +337,12 @@
       glow.style.left = e.clientX + 'px';
       glow.style.top  = e.clientY + 'px';
     }, { passive: true });
-  }
+  };
 
   /* ═══════════════════════════════════════════════════
      INIT
   ═══════════════════════════════════════════════════ */
-  function init() {
+  const init = () => {
     /* Stagger children of grid parents */
     document.querySelectorAll(
       '.about-cards, .skills-grid, .certs-grid, .case-study-grid, .contact-grid'
@@ -380,7 +380,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
-  }
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
