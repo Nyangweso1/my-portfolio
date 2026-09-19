@@ -254,13 +254,15 @@ a:focus-visible    { outline-offset: 4px; }
   transition: width var(--transition);
 }
 
-.nav-links a:not(.nav-cta):hover { color: var(--teal); }
+.nav-links a:not(.nav-cta):hover,
+.nav-links a.active { color: var(--teal); }
 .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+.nav-links a:not(.nav-cta).active::after { width: 100%; }
 
 .nav-cta {
   background: transparent;
-  color: var(--teal) !important;
-  border: 1px solid var(--teal);
+  color: var(--text-3) !important;
+  border: 1px solid var(--navy-3);
   padding: 8px 18px;
   border-radius: var(--radius);
   transition: all var(--transition) !important;
@@ -268,7 +270,14 @@ a:focus-visible    { outline-offset: 4px; }
 
 .nav-cta:hover {
   background: var(--teal-dim);
+  color: var(--teal) !important;
+  border-color: var(--teal);
   transform: translateY(-2px);
+}
+
+.nav-cta.active {
+  color: var(--teal) !important;
+  border-color: var(--teal);
 }
 
 .hamburger {
