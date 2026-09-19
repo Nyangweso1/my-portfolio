@@ -212,10 +212,10 @@
       const link = document.querySelector(`.nav-links a[href="#${id}"]`);
       if (!link) return;
       if (scrollY >= top && scrollY < top + h) {
-        link.style.color = 'var(--teal)';
+        link.classList.add('active');
         link.setAttribute('aria-current', 'true');
       } else {
-        link.style.color = '';
+        link.classList.remove('active');
         link.removeAttribute('aria-current');
       }
     });
