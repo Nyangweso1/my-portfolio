@@ -1088,6 +1088,16 @@ a:focus-visible    { outline-offset: 4px; }
   margin-bottom: 24px;
 }
 
+.assignment-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .stack-pill {
   font-family: var(--font-mono);
   font-size: 0.78rem;
