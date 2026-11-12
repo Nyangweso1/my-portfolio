@@ -1754,7 +1754,7 @@ a:focus-visible    { outline-offset: 4px; }
   border: 0;
 }
 
-/* ── GHOST BUTTON (Download CV) ───────────────────────── */
+/* ── GHOST BUTTON (CV request) ────────────────────────── */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
