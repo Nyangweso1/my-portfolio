@@ -31,6 +31,12 @@ Core areas include:
 - Google Fonts
 - EmailJS
 
+## Certifications
+
+- [Microsoft Certified: Fabric Data Engineer Associate](https://learn.microsoft.com/api/credentials/share/en-us/NyangwesoPrudence-6529/B826A55463D848D6?sharingId=7695414606082425)
+- [Microsoft Certified: Fabric Analytics Engineer Associate](https://learn.microsoft.com/api/credentials/share/en-us/NyangwesoPrudence-6529/9F4DE580AFAB2AF1?sharingId=7695414606082425)
+- [Microsoft Certified: SQL AI Developer Associate (DP-800)](https://learn.microsoft.com/en-us/users/nyangwesoprudence-6529/credentials/certification/developing-ai-enabled-database-solutions?wt.mc_id=certnurture_eml1_email_wwl&source=docs&tab=credentials-tab#main)
+
 ## Run locally
 
 No build tools are required. Open `index.html` in a browser, or serve the folder with a local web server:
